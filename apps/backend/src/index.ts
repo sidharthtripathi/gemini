@@ -25,7 +25,6 @@ server.use((req,res,next)=>{
     else{
         res.locals.userId = userId
     }
-    
     next()
 })
 
