@@ -19,7 +19,10 @@ server.use((req,res,next)=>{
     let userId = req.cookies.userId as string | undefined
     if(!userId){
         let userId = uuid()
-        res.cookie("userId",userId)
+        res.cookie("userId",userId,{
+            secure : true,
+            sameSite: "none"
+        })
         res.locals.userId = userId
     }
     else{
